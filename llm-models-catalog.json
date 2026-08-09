@@ -22,7 +22,7 @@
       "quant": "Q4_K_M",
       "source_url": "Not recorded at download time. Filename convention matches a standard HuggingFace GGUF-quant repo naming pattern -- inferred, not independently verified. Fix this gap the next time this model is re-downloaded or a source is confirmed.",
       "downloaded_at": "2026-08-05T11:22 (file mtime; moved from C: to D: same day per wsl2-git-credential-helper-fix memory, C: had hit 0 free)",
-      "call_count_this_identity": 2,
+      "call_count_this_identity": 4,
       "jaws_card": {
         "status": "Qualifies per Org Lead's 2026-08-09 rule (2+ calls to the same LLM earns a JAWS card). Not yet dealt -- not self-assigning a rank/suit, matches the standing discipline for every other JAWS card in dashborg/card-grid-v0.json (human-dealt from a real physical deck).",
         "proposed_id_if_dealt": "model-qwen3-coder-30b-a3b-jaws-<rank>-<suit>"
@@ -47,9 +47,18 @@
           "notes": "Fallback only -- no longer the default. Use if a future vulkaninfo check genuinely shows the GPU heap exhausted, which has not yet actually happened."
         }
       ],
-      "standing_launch_command": "C:\\Users\\ottopoet-thesean\\llm-ops\\llama-vulkan\\llama-server.exe -m D:/llm-ops/models/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf --n-gpu-layers 999 --host 127.0.0.1 --port 8081 --ctx-size 8192",
-      "check_if_already_running": "curl -s http://127.0.0.1:8081/health -- if {\"status\":\"ok\"}, don't relaunch; if a response comes back, also check Get-CimInstance Win32_Process for the PID's actual command line to confirm which mode (gpu/cpu) is live before assuming."
+      "standing_launch_command": "C:\\Users\\ottopoet-thesean\\llm-ops\\llama-vulkan\\llama-server.exe -m D:/llm-ops/models/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf --n-gpu-layers 999 --host 127.0.0.1 --port 8081 --ctx-size 32768",
+      "check_if_already_running": "curl -s http://127.0.0.1:8081/health -- if {\"status\":\"ok\"}, don't relaunch; if a response comes back, also check Get-CimInstance Win32_Process for the PID's actual command line to confirm which mode (gpu/cpu) is live before assuming.",
+      "confirmed_harness_pairings": [
+        {
+          "harness": "opencode",
+          "config_location": "C:\\Users\\ottopoet-thesean\\.config\\opencode\\opencode.json (global -- a project-directory-relative config did not reliably apply)",
+          "confirmed_at": "2026-08-09",
+          "real_lesson": "--ctx-size 8192 was too small for OpenCode's own agentic scaffolding alone (~9,700+ tokens before any real task) -- caused a genuine context-overflow retry loop. Fixed by raising to 32768."
+        }
+      ]
     }
   ],
+  "model_task_evaluation_data_lives_at": "MODELS-OF/ottopoet-thesean's model-task-evaluation.json (schema model-task-evaluation.v0) -- real (harness, model, task) trial data for Sonnet/Haiku-subagent/local-model routing decisions, per the Org Lead's 2026-08-09 'technical manager doing job interviews' directive. This file tracks WHAT is installed; that one tracks HOW WELL it performs on real tasks.",
   "maintenance_rule": "Update this file as part of the SAME action that downloads a new model or installs/updates a runtime -- not as a follow-up task to remember later. This file existed nowhere before 2026-08-09; a full multi-path filesystem search was needed to reconstruct it once. Never let that happen twice."
 }
