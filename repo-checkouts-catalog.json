@@ -84,15 +84,15 @@
       "path": "C:\\Users\\ottopoet-thesean\\scratch-models-of\\models-of",
       "origin": "https://github.com/MODELS-OF/models-of.git",
       "branch": "main",
-      "purpose": "Schema repo for 'models-of.v0' -- NOT an LLM-model catalog despite the name. It's the Nonomino Field Guide's nonomino-piece-to-topic assignment schema (see schemas/models-of.v0.schema.json). Do not conflate with llm-models-catalog.json.",
-      "status": "active-but-easily-misread"
+      "purpose": "Schema repo, now holding TWO disambiguated schemas as of 2026-08-09: 'models-of.v0' (Nonomino Field Guide's piece-to-topic mapping, the original) and 'llm-runtime-model.v0' (LLM runtime installs/model weights, added this session per the Org Lead's clarification that MODELS-OF's real scope is any kind of model, not just the first one built here). Corrected from an earlier, wrongly-narrow entry in this same file.",
+      "status": "active"
     },
     {
       "path": "C:\\Users\\ottopoet-thesean\\scratch-models-of\\ottopoet-thesean",
       "origin": "https://github.com/MODELS-OF/ottopoet-thesean.git",
       "branch": "main",
-      "purpose": "My own per-identity data file for the models-of.v0 schema above (model.json, model.grouped.json) -- same caveat, this is nonomino-topic data, not LLM models.",
-      "status": "active-but-easily-misread"
+      "purpose": "My own per-identity data: model.json/model.grouped.json (nonomino-topic mapping, models-of.v0) AND llm-model.json (LLM catalog data, llm-runtime-model.v0, added 2026-08-09) -- two disambiguated files, same repo, per the org's own stated convention.",
+      "status": "active"
     },
     {
       "path": "/root/pfm-org (WSL2 Ubuntu, not a Windows path)",
