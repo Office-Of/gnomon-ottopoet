@@ -1,0 +1,55 @@
+{
+  "schema": "ottopoet.llm-models-catalog.v0",
+  "purpose": "Authoritative, fast-to-check record of local LLM runtime installs and model weight files on this machine. Check this FIRST before ever running a multi-path find/search for '.gguf' or 'llama-server' again -- see llm-ops-install-locations.md (memory) for the incident that made this necessary.",
+  "updated_at": "2026-08-09T02:59:00-07:00",
+  "runtime_installs": [
+    {
+      "binary": "llama-server.exe",
+      "path": "C:\\Users\\ottopoet-thesean\\llm-ops\\llama-vulkan\\llama-server.exe",
+      "version": "10288 (360e1349f), built with Clang 20.1.8 for Windows x86_64",
+      "source": "Pre-built llama.cpp Windows Vulkan release archive (llama-vulkan.zip, same directory, 34.1MB) -- exact download URL not recorded at install time.",
+      "installed_at": "2026-08-05 (zip fetched ~10:49, binaries extracted ~17:12-17:15, per file mtimes)",
+      "backend": "Vulkan (AMD proprietary driver 26.7.1, device: AMD Radeon(TM) 8060S Graphics, Ryzen AI Max / Strix Halo iGPU)",
+      "other_binaries_in_same_dir": "llama-cli.exe, llama-bench.exe, llama-quantize.exe, llama-perplexity.exe, and other standard llama.cpp tools -- same release, not individually catalogued unless one gets used."
+    }
+  ],
+  "models": [
+    {
+      "name": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_M",
+      "path": "D:\\llm-ops\\models\\Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+      "size_bytes": 18556689568,
+      "format": "gguf",
+      "quant": "Q4_K_M",
+      "source_url": "Not recorded at download time. Filename convention matches a standard HuggingFace GGUF-quant repo naming pattern -- inferred, not independently verified. Fix this gap the next time this model is re-downloaded or a source is confirmed.",
+      "downloaded_at": "2026-08-05T11:22 (file mtime; moved from C: to D: same day per wsl2-git-credential-helper-fix memory, C: had hit 0 free)",
+      "call_count_this_identity": 2,
+      "jaws_card": {
+        "status": "Qualifies per Org Lead's 2026-08-09 rule (2+ calls to the same LLM earns a JAWS card). Not yet dealt -- not self-assigning a rank/suit, matches the standing discipline for every other JAWS card in dashborg/card-grid-v0.json (human-dealt from a real physical deck).",
+        "proposed_id_if_dealt": "model-qwen3-coder-30b-a3b-jaws-<rank>-<suit>"
+      },
+      "verified_benchmarks": [
+        {
+          "mode": "gpu_vulkan",
+          "launch_flag": "--n-gpu-layers 999",
+          "load_time_s": 8.3,
+          "tokens_per_sec_generation": 87.1,
+          "tokens_per_sec_prompt": 163.3,
+          "confirmed_at": "2026-08-09",
+          "notes": "Standing default as of this date -- the earlier '512MB VRAM ceiling' finding was a misdiagnosis of the wrong Windows counter (AdapterRAM/Dedicated Usage), not a real hardware constraint. Real Vulkan device-local heap: 68.22 GiB (vulkaninfo). See llm-ops-vram-not-guaranteed-available.md's retraction section."
+        },
+        {
+          "mode": "cpu_only",
+          "launch_flag": "--n-gpu-layers 0",
+          "load_time_s": 46,
+          "tokens_per_sec_generation": 27,
+          "tokens_per_sec_prompt": 19,
+          "confirmed_at": "2026-08-09",
+          "notes": "Fallback only -- no longer the default. Use if a future vulkaninfo check genuinely shows the GPU heap exhausted, which has not yet actually happened."
+        }
+      ],
+      "standing_launch_command": "C:\\Users\\ottopoet-thesean\\llm-ops\\llama-vulkan\\llama-server.exe -m D:/llm-ops/models/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf --n-gpu-layers 999 --host 127.0.0.1 --port 8081 --ctx-size 8192",
+      "check_if_already_running": "curl -s http://127.0.0.1:8081/health -- if {\"status\":\"ok\"}, don't relaunch; if a response comes back, also check Get-CimInstance Win32_Process for the PID's actual command line to confirm which mode (gpu/cpu) is live before assuming."
+    }
+  ],
+  "maintenance_rule": "Update this file as part of the SAME action that downloads a new model or installs/updates a runtime -- not as a follow-up task to remember later. This file existed nowhere before 2026-08-09; a full multi-path filesystem search was needed to reconstruct it once. Never let that happen twice."
+}

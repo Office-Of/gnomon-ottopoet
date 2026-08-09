@@ -1,0 +1,113 @@
+{
+  "schema": "ottopoet.repo-checkouts-catalog.v0",
+  "purpose": "Authoritative record of persistent (non-ephemeral, reused-across-sessions) git checkouts on this machine, with what each is for. Check this FIRST before a fresh 'find -iname .git' sweep. Does NOT include throwaway /tmp/-style clones made and discarded within one tool-call sequence -- those are legitimately transient and not worth tracking.",
+  "updated_at": "2026-08-09T03:05:00-07:00",
+  "checkouts": [
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\.AWG26\\.AO\\PlayFieldMultiplier\\pfm-framework",
+      "origin": "https://github.com/PlayFieldMultiplier/pfm-framework.git",
+      "branch": "main",
+      "purpose": "Primary working checkout for pfm-framework product work (e.g. issue #56/#73/#161 fixes). This is the one to use for pfm-framework work going forward.",
+      "status": "active"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\scratch-pfmfw\\pfm-framework",
+      "origin": "https://github.com/PlayFieldMultiplier/pfm-framework.git",
+      "branch": "main",
+      "purpose": "DUPLICATE of the checkout above, same origin/branch. Name suggests a one-off scratch test. Candidate for deletion -- not deleting unilaterally without confirming nothing depends on it, but don't treat this as a second legitimate pfm-framework working dir.",
+      "status": "probably-stale-duplicate"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\.AWG26\\.AO\\BESTIARY-OF\\tdotdh-field-guide",
+      "origin": "https://github.com/BESTIARY-OF/tdotdh-field-guide.git",
+      "branch": "main",
+      "purpose": "TDOTDH Nonomino Field Guide tool -- dogfooding/exploration installation, served locally on port 5174 with a persistent Puppeteer profile (app is localStorage-only).",
+      "status": "active"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\.AWG26\\.AO\\BESTIARY-OF\\TDOTDH",
+      "origin": "https://github.com/BESTIARY-OF/TDOTDH.git",
+      "branch": "main",
+      "purpose": "The underlying TDOTDH data/bestiary repo the field guide reads from. Last touched 2025-10-08 -- much older than the field-guide checkout itself; likely a data dependency rather than something actively edited.",
+      "status": "active-dependency"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\.AWG26\\.AO\\MAPS-OF\\SEDLEC-00Q",
+      "origin": "https://github.com/MAPS-OF/SEDLEC-00Q.git",
+      "branch": "main",
+      "purpose": "SEDLEC-00Q data pack consumed by the Nonomino Field Guide dogfooding work.",
+      "status": "active"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\skill-of-agent-dispatch",
+      "origin": "https://github.com/SKILL-OF/agent-dispatch.git",
+      "branch": "main",
+      "purpose": "Working checkout for the agent-dispatch skill (PMO-EP066 / pfm-project-management#144), verified shipped v1 as of 2026-08-04.",
+      "status": "active"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\scratch-retest\\pfm-org",
+      "origin": "https://github.com/PlayFieldMultiplier/pfm-org.git",
+      "branch": "devline",
+      "purpose": "Name suggests a re-test/verification checkout (matches the #37/#80 docker-compose empirical-testing pattern this identity has run repeatedly). Also contains nested repos/pfm-data-pinballpdx and repos/pfm-framework checkouts under it (the docker-compose 'repos/' convention from PRE_MIGRATION_SETUP.md) -- those are dependencies of THIS checkout, not separate top-level entries.",
+      "status": "probably-reusable-test-rig, not a product working dir"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\cards-of-6ff45d9a",
+      "origin": "https://github.com/SOURCES-OF/cards-of-6ff45d9a.git",
+      "branch": "main",
+      "purpose": "Unclear from the name alone which repo family this really belongs to (org is SOURCES-OF but local dir name says cards-of) -- flagging for review rather than guessing. Last touched 2026-08-07.",
+      "status": "purpose-unclear-needs-review"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\sources-of-6ff45d9a",
+      "origin": "https://github.com/CARDS-OF/sources-of-6ff45d9a.git",
+      "branch": "main",
+      "purpose": "Same naming mismatch as the entry above, inverted (dir says sources-of, org is CARDS-OF). These two look like a pair worth reconciling together, not independently understood. Last touched 2026-08-07.",
+      "status": "purpose-unclear-needs-review"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\.codex\\plugins\\telling-time",
+      "origin": "https://github.com/SKILL-OF/telling-time.git",
+      "branch": "main",
+      "purpose": "Codex plugin install for the telling-time skill (wall-clock UserPromptSubmit hook) -- this is Codex's own plugin directory convention, not a manually-managed working checkout.",
+      "status": "active-plugin-install"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\.codex\\memories",
+      "origin": null,
+      "branch": "main",
+      "purpose": "Local-only git repo (no remote configured) -- appears to be Codex's own internal memory-versioning mechanism, not a checkout of any external repo. Excluded from 'repo checkout' framing but noted so a future sweep doesn't re-investigate it as a mystery.",
+      "status": "not-a-checkout-internal-tooling"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\scratch-models-of\\models-of",
+      "origin": "https://github.com/MODELS-OF/models-of.git",
+      "branch": "main",
+      "purpose": "Schema repo for 'models-of.v0' -- NOT an LLM-model catalog despite the name. It's the Nonomino Field Guide's nonomino-piece-to-topic assignment schema (see schemas/models-of.v0.schema.json). Do not conflate with llm-models-catalog.json.",
+      "status": "active-but-easily-misread"
+    },
+    {
+      "path": "C:\\Users\\ottopoet-thesean\\scratch-models-of\\ottopoet-thesean",
+      "origin": "https://github.com/MODELS-OF/ottopoet-thesean.git",
+      "branch": "main",
+      "purpose": "My own per-identity data file for the models-of.v0 schema above (model.json, model.grouped.json) -- same caveat, this is nonomino-topic data, not LLM models.",
+      "status": "active-but-easily-misread"
+    },
+    {
+      "path": "/root/pfm-org (WSL2 Ubuntu, not a Windows path)",
+      "origin": "https://github.com/PlayFieldMultiplier/pfm-org.git",
+      "branch": "integration/phase-01-pr37-decomposition",
+      "purpose": "WSL2-side pfm-org checkout used for docker-compose empirical testing (the PR#37/#80 verification pattern). Contains nested repos/pfm-framework, repos/pfm-data-pinballpdx, repos/pfm-app, repos/pfm-admin, repos/pfm-daemon, repos/pfm-data-loader, repos/pfm-project-management checkouts under repos/ (PRE_MIGRATION_SETUP.md's docker-compose convention) -- those are dependencies of this checkout, not separate top-level entries. Head commit (6550e5d, 2026-08-04) is the exact commit that fixed PR#80's trailing-whitespace blocker -- this may be where that fix was originally authored.",
+      "status": "active-test-rig"
+    },
+    {
+      "path": "/root/scratch-retest2/pfm-org (WSL2 Ubuntu, not a Windows path)",
+      "origin": "https://github.com/PlayFieldMultiplier/pfm-org.git",
+      "branch": "fix/role-determination-self-contradiction",
+      "purpose": "Another WSL2-side pfm-org retest rig, different branch than the one above. Two WSL2 pfm-org checkouts plus one Windows-side (scratch-retest/pfm-org) -- worth eventually consolidating to one canonical test-rig location, not doing that unilaterally right now.",
+      "status": "active-test-rig"
+    }
+  ],
+  "maintenance_rule": "Update this file as part of the SAME action that clones a new persistent working checkout -- not as a follow-up task to remember later. A full 'find -iname .git' sweep across the whole profile was needed once (2026-08-09) to reconstruct this; never let that happen twice."
+}
