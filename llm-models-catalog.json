@@ -22,7 +22,7 @@
       "quant": "Q4_K_M",
       "source_url": "Not recorded at download time. Filename convention matches a standard HuggingFace GGUF-quant repo naming pattern -- inferred, not independently verified. Fix this gap the next time this model is re-downloaded or a source is confirmed.",
       "downloaded_at": "2026-08-05T11:22 (file mtime; moved from C: to D: same day per wsl2-git-credential-helper-fix memory, C: had hit 0 free)",
-      "call_count_this_identity": 20,
+      "call_count_this_identity": 24,
       "jaws_card": {
         "status": "DEALT 2026-08-09: 🦈7♣️⬇️ (reversed orientation). Registry entry (dashborg/card-grid-v0.json, id model-qwen3-coder-30b-a3b-jaws-7-clubs) is the canonical record.",
         "card": "🦈7♣️⬇️"
