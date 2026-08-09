@@ -56,15 +56,15 @@
       "path": "C:\\Users\\ottopoet-thesean\\cards-of-6ff45d9a",
       "origin": "https://github.com/SOURCES-OF/cards-of-6ff45d9a.git",
       "branch": "main",
-      "purpose": "Unclear from the name alone which repo family this really belongs to (org is SOURCES-OF but local dir name says cards-of) -- flagging for review rather than guessing. Last touched 2026-08-07.",
-      "status": "purpose-unclear-needs-review"
+      "purpose": "RESOLVED 2026-08-09 (was flagged unclear, just hadn't read the README): this session's (6ff45d9a) image-provenance ledger, MIRROR half of a deliberate dual-org pattern documented in its own README -- SHA256-keyed JSONL of every image uploaded to this session's transcript. The naming convention embeds which org's flavor each copy is: this repo name says which org it's a copy OF.",
+      "status": "active"
     },
     {
       "path": "C:\\Users\\ottopoet-thesean\\sources-of-6ff45d9a",
       "origin": "https://github.com/CARDS-OF/sources-of-6ff45d9a.git",
       "branch": "main",
-      "purpose": "Same naming mismatch as the entry above, inverted (dir says sources-of, org is CARDS-OF). These two look like a pair worth reconciling together, not independently understood. Last touched 2026-08-07.",
-      "status": "purpose-unclear-needs-review"
+      "purpose": "RESOLVED 2026-08-09: PRIMARY half of the same dual-org pair as the entry above -- this one has write access per its own README ('you are here (primary ledger, write access)'). Write new image-provenance records here, not the SOURCES-OF mirror.",
+      "status": "active"
     },
     {
       "path": "C:\\Users\\ottopoet-thesean\\.codex\\plugins\\telling-time",
