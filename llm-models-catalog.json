@@ -24,8 +24,8 @@
       "downloaded_at": "2026-08-05T11:22 (file mtime; moved from C: to D: same day per wsl2-git-credential-helper-fix memory, C: had hit 0 free)",
       "call_count_this_identity": 4,
       "jaws_card": {
-        "status": "Qualifies per Org Lead's 2026-08-09 rule (2+ calls to the same LLM earns a JAWS card). Not yet dealt -- not self-assigning a rank/suit, matches the standing discipline for every other JAWS card in dashborg/card-grid-v0.json (human-dealt from a real physical deck).",
-        "proposed_id_if_dealt": "model-qwen3-coder-30b-a3b-jaws-<rank>-<suit>"
+        "status": "DEALT 2026-08-09: 🦈7♣️⬇️ (reversed orientation). Registry entry (dashborg/card-grid-v0.json, id model-qwen3-coder-30b-a3b-jaws-7-clubs) is the canonical record.",
+        "card": "🦈7♣️⬇️"
       },
       "verified_benchmarks": [
         {
@@ -54,7 +54,8 @@
           "harness": "opencode",
           "config_location": "C:\\Users\\ottopoet-thesean\\.config\\opencode\\opencode.json (global -- a project-directory-relative config did not reliably apply)",
           "confirmed_at": "2026-08-09",
-          "real_lesson": "--ctx-size 8192 was too small for OpenCode's own agentic scaffolding alone (~9,700+ tokens before any real task) -- caused a genuine context-overflow retry loop. Fixed by raising to 32768."
+          "real_lesson": "--ctx-size 8192 was too small for OpenCode's own agentic scaffolding alone (~9,700+ tokens before any real task) -- caused a genuine context-overflow retry loop. Fixed by raising to 32768.",
+          "shell_invocation_note": "Git-Bash/MSYS mangles a provider/model string containing a Windows drive-letter path. Correct fix, confirmed: prefix the Bash command with MSYS_NO_PATHCONV=1 -- NOT switching to PowerShell (that was tried first and was wrong, since these scripts need to run on other agents' macOS/Linux machines too; MSYS_NO_PATHCONV=1 stays in Bash and is a safe no-op where the bug doesn't exist)."
         }
       ]
     }
